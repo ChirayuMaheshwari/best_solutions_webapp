@@ -1,0 +1,493 @@
+<html>
+
+<head>
+
+  
+
+  <!--  external css and javascripts-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> This is user page</title>
+  
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/hexagons.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        
+
+
+
+
+
+</head>
+<body style="margin:30px; padding:30px">
+  <div id="login" class="form-popup" style="margin-left:30%;margin-right:15%;margin-top:25%;width:500px;height:500px;background-color:white;">
+    <button style="float:right" id="click"><img src="/images/close_page.jpg" width="30px" height="30px"></button>
+    <form>
+      <div style="text-align:center" class="form-group">
+        <label for="email1">Email address</label>
+        <input style="width:auto;margin-left:10%;margin-right:10%" type="email" class="form-control" id="email1" aria-describedby="emailHelp" placeholder="Enter email">
+        
+      </div>
+      <div style="text-align:center" class="form-group">
+        <label for="textarea1">Write about any previous disease you had</label>
+        <input style="width:auto;margin-left:10%;margin-right:10%" type="textarea" class="form-control" id="textarea1" placeholder="textarea">
+      </div>
+      <div style="text-align:center" >
+      <button type="button" class="more_info" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+  </div>
+<script>
+  function login()
+  {
+   document.getElementById("login").style.display="block";
+  }
+  function close()
+  {
+    document.getElementById("login").style.display="none";
+  }
+  function decrease(value)
+  {
+  console.log(value);
+   var html= parseInt(document.getElementById(value).innerHTML)
+   console.log(html)
+   if(html!=0)
+   html=html-1;
+   document.getElementById(value).innerHTML=html;
+
+
+  }
+  function increase(value)
+  {
+   var html= parseInt(document.getElementById(value).innerHTML)
+   console.log(html)
+   
+   html=html+1;
+   document.getElementById(value).innerHTML=html;
+
+
+  }
+</script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Nav bar coding -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images\we.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            
+          </a>
+        
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul  class="navbar-nav">
+            
+            <li style="padding-left:30px" class="nav-item active">
+              <a class="navbar-brand" href="#">Home</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Doctor</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Products</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Services</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+                <a class="navbar-brand" href="#">Entertainment</a>
+              </li>
+              <li style="padding-left:40px" class="nav-item active">
+                <a class="navbar-brand" href="#">Bolgs</a>
+              </li>
+              <li style="padding-left:40px" class="nav-item active">
+                <a href="/user_profile"><button style="border-radius:12px"  type="button" class=" btn btn-dark btn-sm navbar-brand" ><%=name%></button></a>
+                
+              </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- nav bar code completed-->
+
+  
+  
+  
+  
+  
+  
+  
+  
+      <!-- family image-->
+    <div>
+        <img  src="/images/family.jpg" width="100%" height="300px">
+    </div>
+    <!-- family image added-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- adding button area-->
+    <div style="width:100%;margin-bottom:30px;height:300px">
+      <div style="width:50%;float:left;margin-top:100px">
+        <h3 style="padding-left:5px;color:slategray">Best</h3>
+        <h1 style="padding-left:15px;color:#6ab2db">     Solutions</h1>
+      </div>
+      <div style="width:50%;float:left;margin-top:50px;text-align: center;">
+        <div>
+          <a style="border-radius: 50%" class="btn btn-success" href="/<%=result_disease[0].disease_id%>/disease" role="button"><%=result_disease[0].disease_type%></a>
+          <a style="border-radius: 50%" class="btn btn-success" href="/<%=result_disease[1].disease_id%>/disease" role="button"><%=result_disease[1].disease_type%></a>
+      </div>
+      <div style="margin-top:10px">
+        <a style="border-radius: 50%" class="btn btn-success" href="/<%=result_disease[2].disease_id%>/disease" role="button"><%=result_disease[2].disease_type%></a>
+        <a style="border-radius: 50%" class="btn btn-success" href="/<%=result_disease[3].disease_id%>/disease" role="button"><%=result_disease[3].disease_type%></a>
+        <a style="border-radius: 50%" class="btn btn-success" href="/<%=result_disease[4].disease_id%>/disease" role="button"><%=result_disease[4].disease_type%></a>
+      </div>
+      </div>
+    </div>
+    <!-- button area added-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- zigzag border area -->
+    <div style="margin-top:50px;margin-bottom:0px;" class="h-zigzag">
+    <h3 style="text-align: center;color:white">Forum</h3><br />
+    <p style="color:white;padding-left:5px;padding-right:5px">people can discuss anything here like 1 has query or wants to discuss something so she can drop in a query anonymously and others can join the discussion below and give their opinion!</p>
+    <!-- adding card images-->
+    <div style="width:100%; margin:0px">
+    <div  style="border-radius:10px;background-color:rgb(120, 120, 163);text-align:center;width:35%; margin-left:50px; float:left;" class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/person1.jpg" width="280px" height="300px" alt="Card image cap">
+        <div style="margin:auto;" class="card-body">
+          <a href="/write_to_us" class="btn btn-primary">Drop in a query</a>
+        </div>
+      </div>
+      <div style="border-radius:10px;background-color:rgb(120, 120, 163);text-align:center;width:35%; margin-right:50px; float:right;" class="card" style="width: 18rem;">
+        <img class="card-img-top" src="images/person2.jpg" width="280px" height="300px" alt="Card image cap">
+        <div style="margin:auto;" class="card-body">
+                    <a  href="/blogs" class="btn btn-primary">Join the dsicussion</a>
+        </div>
+      </div>
+    </div>
+    <!-- added card images-->
+</div>
+<!-- zigzag border area added-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- adding consult specialist area-->
+<div style="background-color:rgb(138, 138, 192);display:inline-block;text-align:center;width:100%">
+<h1  style="margin:auto"> Consult </h1>
+
+<div style="display:inline-block">
+<% for (var i =0; i <4;  i++ ) { %>
+  <div style="width:20%;float:left;margin:2.5%;" class="card">
+    <img class="card-img-top" src="/images/doctor_images/<%= result1[i].doctor_id%>" width="200px" height="200px" alt="Card image cap">
+    <div style="text-align:center" class="card-body">
+      <h5 class="card-title"><%= result1[i].name %></h5>
+      <p class="card-text"><%= result1[i].specialization %></p>
+      <a style="margin:auto" href="/<%=result1[i].doctor_id.substring(0,5) %>/consult" class="btn btn-primary">Consult</a>
+    </div>
+</div>
+     
+  <% } %>
+  <a href="/" style="float:right">view all>></a>
+</div>
+</div>
+ <!-- added consult specialist area-->   
+    
+
+
+
+
+
+
+<!--product infor-->
+<% for (var i=0;i<result2.length; i++){ %>
+  
+<div id="div<%=i%>" class="form-popup" style="text-align:center;margin-bottom:20px;
+margin-left:30%;margin-right:15%;margin-top:5%;width:500px;height:auto;background-color:white;display:none;">
+<div style="margin:auto"><img src="images/product_image/<%=result2[i].product_id%>" alt="image" width="auto" height="auto"></div>
+<hr>
+<div><%=result2[i].name %></div>
+<hr>
+<div><%=result2[i].disease_associated%></div>
+<div> This is description</div>
+
+</div>
+<%}%>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- adding product selling area-->
+<div style="width:100%;display:inline-block">
+  <div style="width:20%">
+<img style="float:left" src="/images/shop.jpg" width="200px" height="400px" alt="text">
+</div>
+<div style="width:100%;text-align: center;">
+
+  <% for (var i =0; i <4;  i++ ) { %>
+    <div style="width:auto;float:left;margin:1.5%;" class="card">
+      
+      <img id="<%=i%>" class="image_hover card-img-top" src="/images/product_image/<%= result2[i].product_id%>" width="200px" height="200px" alt="Card image cap">
+    
+      <div class="card-body">
+        
+        <h5 class="card-title"> <%= result2[i].name %></h5>
+        <p class="card-text"><%= result2[i].specialization %></p>
+        <div style="margin-bottom:10px">
+        <button onclick= "return decrease('<%=result2[i].product_id.substring(0,result2[i].product_id.length-4)%>')" style="width:10px" type="button" class="btn btn-success">-</button>
+        <p style="display:inline" id="<%=result2[i].product_id.substring(0,result2[i].product_id.length-4)%>">0</p>
+        <button onclick="return increase('<%=result2[i].product_id.substring(0,result2[i].product_id.length-4)%>')" style="width:10px" type="button" class="btn btn-success">+</button>
+      </div>
+        <a style="margin:auto"  id="add_to_cart<%=result2[i].product_id.substring(0,result2[i].product_id.length-4)%>" class="add_to_cart btn btn-primary">Add to cart</a>
+      </div>
+    </div>
+    <% } %>
+  </div>
+      
+</div>
+<a href="/" style="float:right">view all>></a>
+    
+<!-- adding product selling area-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- adding blog area-->
+<div style="display:inline-block;width:100%;height: 100%;margin-top:50px">
+
+<img style="float:left" src="images/blog.png" width="70%" height="100%">
+<img style="float:left" src="images/blog2.png" width="30%" height="100%">
+</div>
+
+
+<div style="display:inline-block;background-color:#E3F1F4;width:100%">
+<h1 style="float:left;background-color: #E3F1F4"> working for healthy you</h1>
+<a style="float:right;background-color: #E3F1F4" href="/"> view all</a>
+</div>
+<div style="display:inline-block;background-color: #E3F1F4;width:100%;margin-top: 0px">
+<p style="width:50%;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+is simply dummy text of the printing and typesetting industry.</p>
+</div>
+<!-- blog area added-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- adding footer area-->
+<div style="width:100%; margin-top:100px">
+ <a style="padding-left:150px" href="#">About</a>
+ <a style="padding-left:250px" href="#">Contact</a>
+ <a style="padding-left:250px" href="#">NewsLetter</a>
+ <br>
+ <a style="margin-top:30px;padding-left:150px;color:black" href="#">Terms of use</a>
+ <a style="padding-top:30px;padding-left:190px;color:black" href="#">Shipping</a>
+ <br>
+ <a style="padding-top:20px;padding-left:150px;color:black" href="#">Privacy Policy</a>
+ <a style="padding-top:20px;padding-left:180px;color:black" href="#">Others</a>
+ <br>
+ <a style="padding-top:20px;padding-left:150px;color:black" href="#">Careers</a>
+ 
+
+</div>
+<!-- footer area added-->
+
+<!--social media attaching-->
+<div style="float:right">
+  <a href="#"><span class="hb hb-xs"><i class="fa fa-facebook"></i></span></a>
+		<a style="margin-left:20px" href="#"><span class="hb hb-xs"><i class="fa fa-twitter"></i></span></a>
+		
+    <a style="margin-left:20px" href="#"><span class="hb hb-xs"><i class="fa fa-linkedin-square"></i></span></a>
+  
+</div>
+<!--social media attached-->
+
+
+
+
+
+
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+  jQuery(window).load(function() {
+  localStorage.setItem('status','loggedIn') 
+  console.log(status)
+});
+
+
+</script>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+$(".image_hover").hover(function()
+{
+var id=this.id
+var id="div"+id;
+if(document.getElementById(id).style.display=="none")
+document.getElementById(id).style.display="block";
+else if(document.getElementById(id).style.display=="block")
+{document.getElementById(id).style.display="none";
+console.log("in image_hover event")}
+})
+$(".add_to_cart").click(function(){
+  var id=this.id;
+  var string =id.slice(11,id.length);
+  console.log(string)
+  var html=document.getElementById(string).innerHTML;
+  console.log(html)
+  if(string>0)
+  {
+    $.ajax({
+      url:"/add_to_cart",
+      data:{
+         count:html,
+         id:string
+      },
+      method:"post",
+      success:function(res){
+        console.log(res.msg);
+      }
+    })
+  }
+})
+$("#click").click(function(){
+    
+    document.getElementById("login").style.display="none"
+})
+$(".more_info").click(function()
+{
+  console.log("we are in more info");
+  var email=document.getElementById("email1").value;
+  var textarea=document.getElementById("textarea1").value;
+  
+  $.ajax({
+      url:"/more_info_of_user",
+      data:{
+         email:email,
+         textarea:textarea
+      },
+      method:"post",
+      success:function(res){
+        console.log(res.msg);
+      }
+    })
+    document.getElementById('login').style.display="none"
+  /*$.ajax({
+    method:"post",
+    url:"/more_info",
+    data:{
+      email:email,
+      textarea:textarea
+    },
+    success:function(res){
+      console.log(res.msg)
+    }
+  })*/
+})
+</script>
+
+</body>
+</html>

@@ -1,0 +1,222 @@
+<html>
+    <head>
+
+        <title>This is title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> This is user page</title>
+        
+        <link rel="stylesheet" type="text/css" href="mycss.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/hexagons.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    
+    
+    
+    
+</head>
+<body style="margin:30px">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="\images\we.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            
+          </a>
+        
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul  class="navbar-nav">
+            
+            <li style="padding-left:30px" class="nav-item active">
+              <a class="navbar-brand" href="#">Home</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Doctor</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Products</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Services</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+                <a class="navbar-brand" href="#">Entertainment</a>
+              </li>
+              <li style="padding-left:40px" class="nav-item active">
+                <a class="navbar-brand" href="#">Bolgs</a>
+              </li>
+              <li style="padding-left:40px" class="nav-item active">
+                <button style="border-radius:12px" type="button" class="btn btn-dark btn-sm navbar-brand">Login/Signup</button>
+                
+              </li>
+          </ul>
+        </div>
+      </nav>
+      <div style="margin-bottom:20px;margin-left:30%; margin-right:30%;background-color:purple;text-align:center;border-radius:40%">
+      <h1 style=" margin:auto"> This is our Blog Area</h1>
+      </div>
+    <script>
+        function check()
+        {
+            console.log("button clicked");
+        }
+    </script>
+    <%var j=0 %>
+    <% for (var i =0; i <result1.length;  i++ ) { %>
+       <div>
+        <div class="border border-primary" style="padding:20px;border-radius:5px;padding:5px;margin-top:100px;margin-left:100px;margin-right:30%;margin-bottom:100px;"><%= result1[i].user_query %></div>
+        <div  style="display:none" id="check_comments<%=result1[i].question_id%>">
+         <% for (j=0;j<result2.length ; j++) {%>
+             
+             
+             
+                
+                
+                
+                <%if (result1[i].question_id==result2[j].question_id){%>
+                
+                    
+                    <div style="margin-left:200px;margin-right:40%;margin-bottom:30px;padding:10px" class="border border-warning"><%=result2[j].comment %></div>
+                    <div style="margin-left:70%">
+                    <div><button style="float:left;" class="like" id="like<%=result2[j].comment_id%>" type="submit"><img src="/images/thumbs_up.png" alt="image" width="30px" height="30px"></button></div>
+                    <div  style="float:left;margin-left:10px;margin-right:10px" id="count<%=result2[j].comment_id%>"><%=result2[j].total%></div>
+                    <div><button class="dislike" id="dislike<%=result2[j].comment_id%>" type="submit"><img src="/images/thumbs_down.png" alt="image" width="30px" height="30px"></button></div>
+                     </div>
+                <%}%>
+                
+                <%}%>
+            </div>
+
+
+                
+        
+        <div style="margin-right:30%" class="md-form amber-textarea active-amber-textarea-2">
+  <i class="fas fa-pencil-alt prefix"></i>
+        <textarea rows="3" class="md-textarea form-control" style="display:none;margin-bottom:10px;margin-top:10px;margin-left:200px;margin-right:30%" id="textarea<%= result1[i].question_id%>"></textarea>
+</div>
+        <button name="comment"  class="submit btn btn-primary" style="margin-left:200px;margin-top:10px;display:none;" id="submit<%=result1[i].question_id%>" type="submit"> submit </button>
+        <div style="margin-left:70%;display:inline-block;margin-top:20px">
+        <button  style="margin-top:10px;border-radius:30px" class="comment btn btn-warning" id="comment<%=result1[i].question_id%>" >comment</button>
+        <button  style="margin-top:10px;margin-left:10px;border-radius:30px" class="read_comment btn btn-success" id="read_comment<%=result1[i].question_id%>" >Read comment</button>
+        </div>
+        
+        </div>
+        <hr>
+        <% } %>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script>
+            $(".comment").click(function() {
+            
+            var id=this.id
+             var string= id.slice(7, id.length);
+             console.log(string)
+             if(document.getElementById("textarea"+string).style.display=="none"||document.getElementById("submit"+string).style.display=="none")
+             {
+            document.getElementById("textarea"+string).style.display="block"
+             document.getElementById("submit"+string).style.display="block"
+             }
+             else if(document.getElementById("textarea"+string).style.display=="block"||document.getElementById("submit"+string).style.display=="block")
+             {
+            document.getElementById("textarea"+string).style.display="none"
+             document.getElementById("submit"+string).style.display="none"
+             }
+        });
+        $(".submit").click(function() {
+            
+            var id=this.id
+            var string= this.id.slice(6, id.length);
+            console.log(string)
+             var html=document.getElementById("textarea"+string).value;
+             console.log(html);
+             
+             document.getElementById("textarea"+string).style.display="none"
+             document.getElementById("submit"+string).style.display="none"
+             $.ajax({
+
+                url:"/push_data",
+                data:{
+                    question_id:string,
+                    html:html
+                },
+                    method:"post",
+                    success:function(res)
+                    {
+                            console.log(res.msg)
+                    }
+                }
+             )
+        });
+        $(".read_comment").click(function() {
+            
+            var id=this.id
+            var string= this.id.slice(12, id.length);
+            console.log(string)
+            var new_id="check_comments"+string;
+            console.log(new_id)
+            if(document.getElementById(new_id).style.display=="none")
+            document.getElementById(new_id).style.display="block"
+            else if(document.getElementById(new_id).style.display=="block")
+            document.getElementById(new_id).style.display="none"
+        });
+        $(".like").click(function(){
+
+            var id=this.id;
+            console.log(id)
+            var string= id.slice(4, id.length);
+            var comment_id=string
+            string="count"+string;
+            console.log(string)
+            var value=parseInt(document.getElementById(string).innerHTML);
+            value=value+1;
+            console.log(value)
+            document.getElementById(string).innerHTML=value;
+            console.log("in update ajax")
+            $.ajax({
+               
+                url:"/update_count",
+                data:{
+                    comment_id:comment_id,
+                    value:value
+                },
+                    method:"post",
+                    success:function(res)
+                    {
+                            console.log(res.msg)
+                    }
+                }
+                )
+
+
+        })
+        $(".dislike").click(function(){
+
+            var id=this.id;
+            console.log(id)
+            var string= id.slice(7, id.length);
+            var comment_id=string
+            string="count"+string;
+            console.log(string)
+            var value=parseInt(document.getElementById(string).innerHTML);
+            value=value-1;
+            console.log(value)
+            document.getElementById(string).innerHTML=value;
+            $.ajax({
+
+url:"/update_count",
+data:{
+    comment_id:comment_id,
+    value:value
+},
+    method:"post",
+    success:function(res)
+    {
+            console.log(res.msg)
+    }
+}
+)
+})
+        </script>
+</body>
+</html>

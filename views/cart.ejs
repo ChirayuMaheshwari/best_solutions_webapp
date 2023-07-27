@@ -1,0 +1,138 @@
+<html>
+
+<head>
+
+  
+
+  <!--  external css and javascripts-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> This is user page</title>
+  
+    <link rel="stylesheet" type="text/css" href="mycss.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/hexagons.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+        
+</head>
+<body style="margin:30px; padding:30px">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="images\we.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            
+          </a>
+        
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul  class="navbar-nav">
+            
+            <li style="padding-left:30px" class="nav-item active">
+              <a class="navbar-brand" href="#">Home</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Doctor</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Products</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+              <a class="navbar-brand" href="#">Services</a>
+            </li>
+            <li style="padding-left:40px" class="nav-item active">
+                <a class="navbar-brand" href="#">Entertainment</a>
+              </li>
+              <li style="padding-left:40px" class="nav-item active">
+                <a class="navbar-brand" href="#">Bolgs</a>
+              </li>
+              <li style="padding-left:40px" class="nav-item active">
+                <button style="border-radius:12px"  type="button" class=" btn btn-dark btn-sm navbar-brand" required><%=name%></button></a>
+                
+              </li>
+          </ul>
+        </div>
+      </nav>
+    <div style="text-align:center;margin-top:10px">
+        <div style="border-radius:30%; background-color: purple;margin-top:10px;margin:auto;margin-left:25%;margin-right:25%"><h1> This is your cart</h1></div>
+     <% for (var i=0;i<result.length; i++){ %>
+        <div style="margin:auto;width:18rem;text-align:center;margin-top:20px;" class="card">
+      
+            <img id="<%=i%>" class="image_hover card-img-top" src="/images/product_image/<%= result[i].product_id%>.jpg" width="200px" height="200px" alt="Card image cap">
+          
+        <div class="card-body">
+        
+            <h5 class="card-title"> <%= result[i].name %></h5>
+            <p class="card-text"><%= result[i].specialization %></p>
+            <div style="margin:auto;margin-bottom:10px">
+            <button   style="width:10px"  id="-<%=result[i].product_id%>" type="button" class="button_cart btn btn-success">-</button>
+            <p style="display:inline" id="<%=result[i].product_id%>"><%=result[i].count%></p>
+            <button   style="width:10px"  id="+<%=result[i].product_id%>" type="button" class="button_cart btn btn-success">+</button>
+          </div>
+            <a style="margin:auto"   id="update_cart<%=result[i].product_id%>" class="add_to_cart btn btn-primary">Update Cart</a>
+          </div>
+          </div>
+    
+    <%}%>
+
+    <button style="margin-top:30px" type="button" onclick="payment()" class="btn btn-primary">See Payment _details</button>
+    <div style="margin:auto;margin-top:30px;display:none" id="total_amount">
+        <% var sum=0;%>
+        <% for(var i=0;i<result.length; i++){ %>
+        <%sum=sum+result[i].count*result[i].price; %>
+        <% } %>
+        <div style="margin-top:10px;border-width:auto" class="border border-success"><%=sum%></div>
+
+    </div>
+</div>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+        function payment()
+        {   
+            if(document.getElementById("total_amount").style.display=="none")
+            document.getElementById("total_amount").style.display="block"
+            else if(document.getElementById("total_amount").style.display=="block")
+            document.getElementById("total_amount").style.display="none"
+        }
+        $(".button_cart").click(function(){
+            var id=this.id;
+            
+            var html_value=document.getElementById(id.slice(1,id.length)).innerHTML;
+            if(id[0]=='-'&&html_value>0)
+            {
+                html_value=parseInt(html_value)-1;
+                document.getElementById(id.slice(1,id.length)).innerHTML=html_value;
+            }
+            else if(id[0]=='+')
+            {
+                html_value=parseInt(html_value)+1;
+                document.getElementById(id.slice(1,id.length)).innerHTML=html_value;
+            }
+            console.log(id)
+        })
+        $(".add_to_cart").click(function(){
+            var  id=this.id;
+            var product_id=id.slice(11,id.length)
+            var html_value=document.getElementById(id.slice(11,id.length)).innerHTML;
+            console.log(html_value)
+            $.ajax({
+            url:"/add_to_cart",
+            data:{
+                count:html_value,
+                id:product_id
+            },
+            method:"post",
+            success:function(res){
+                console.log(res.msg);
+      }
+    })
+        })
+        
+        
+
+
+      </script>
+</body>
+</html>

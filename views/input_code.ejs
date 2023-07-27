@@ -1,0 +1,112 @@
+<!--this page takes input for the code sent on user mail-->
+<html>
+    <head>
+      <link rel="stylesheet" href="mycss.css" >
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title> input code</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        
+        function getCodeBoxElement(index) {
+  return document.getElementById('codeBox' + index);
+}
+function onKeyUpEvent(index, event) {
+  const eventCode = event.which || event.keyCode;
+  if (getCodeBoxElement(index).value.length === 1) {
+	 if (index !== 4) {
+		getCodeBoxElement(index+ 1).focus();
+	 } else {
+		getCodeBoxElement(index).blur();
+		// Submit code
+		console.log('submit code ');
+	 }
+  }
+  if (eventCode === 8 && index !== 1) {
+	 getCodeBoxElement(index - 1).focus();
+  }
+}
+function onFocusEvent(index) {
+  for (item = 1; item < index; item++) {
+	 const currentElement = getCodeBoxElement(item);
+	 if (!currentElement.value) {
+		  currentElement.focus();
+		  break;
+	 }
+  }
+}
+    </script>
+    <style>
+   body {
+    text-align: center;
+    background-color: lightcyan;
+    font-family: "POPPINS", Open-Sans;
+    background: linear-gradient(to right, #4568dc, #b06ab3);
+  }
+  
+  ::selection {
+    color: #8e44ad;
+  }
+  
+  .container-fluid .row {
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .passcode-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    margin-bottom: 200px;
+    
+  }
+  .passcode-wrapper input {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin-right: 5px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  .passcode-wrapper input:last-child {
+    margin-right: 0;
+  }
+  .passcode-wrapper input::-webkit-inner-spin-button, .passcode-wrapper input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  .passcode-wrapper input:focus, .passcode-wrapper input.focus {
+    border-color: green;
+    outline: none;
+    box-shadow: none;
+  }
+    </style>
+    </head>
+<body>
+<section class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+			<form class="text-center" action="/registration" method="post">
+				<div class="form-group">
+					<label for="password" class="text-white">Enter 4 Digit Password</label>
+					<div class="passcode-wrapper">
+						<input name="codeBox1" id="codeBox1" type="number" maxlength="1" onkeyup="onKeyUpEvent(1, event)" onfocus="onFocusEvent(1)">
+						<input name="codeBox2" id="codeBox2" type="number" maxlength="1" onkeyup="onKeyUpEvent(2, event)" onfocus="onFocusEvent(2)">
+						<input name="codeBox3" id="codeBox3" type="number" maxlength="1" onkeyup="onKeyUpEvent(3, event)" onfocus="onFocusEvent(3)">
+                        <input name="codeBox4" id="codeBox4" type="number" maxlength="1" onkeyup="onKeyUpEvent(4, event)" onfocus="onFocusEvent(4)"><br>
+                        
+                        
+                    </div>
+                    <button  class="btn btn-primary">Primary</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+</body>
+</html>

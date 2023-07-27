@@ -1,0 +1,425 @@
+
+   /* General Button Style */
+  
+   .form-popup {
+      border-radius: 10px;
+  display: none;
+  position:absolute;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+  width:500px;
+  
+  height:auto;
+  
+}
+
+
+   
+.button {
+	display:block;
+	position: relative;
+	background: #fff;
+	width:100px;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	font-size:20px;
+	text-decoration:none;
+	text-transform:uppercase;
+	color:#e04e5e;
+	margin:40px auto;
+	font-family:Helvetica, Arial, sans-serif;
+	box-sizing:border-box;
+}
+
+/* Button Border Style */
+.button.border {
+		border-top:4px solid #e04e5e;
+		border-bottom:4px solid #e04e5e;
+}
+.button.border:hover {
+	background:#e04e5e;
+	color:#fff;
+}
+
+/* Button Ribbon-Outset Border Style */
+.button.ribbon-outset.border:after, .button.ribbon-outset.border:before {
+		top: 50%;
+		content: " ";
+		height: 42px;
+		width: 42px;
+		position:absolute;
+    top:center;
+    left:center;
+		pointer-events: none;
+		background:#fff;
+	}
+	.button.ribbon-outset.border:after {
+		left:0;
+		margin-top:-40px;
+		transform-origin:0 0;
+		box-sizing:border-box;
+		border-bottom:5px solid #e04e5e;
+		border-left:5px solid #e04e5e;
+		transform:rotate(45deg) skew(19deg,19deg);
+	}
+	.button.ribbon-outset.border:before {
+		right:-42px;
+		margin-top:-40px;
+		transform-origin:0 0;
+		box-sizing:border-box;
+		border-top:5px solid #e04e5e;
+		border-right:5px solid #e04e5e;
+		transform:rotate(45deg) skew(19deg,19deg);
+	}
+	.button.ribbon-outset.border:hover:after {
+		background:#e04e5e
+	}
+	.button.ribbon-outset.border:hover:before {
+		background:#e04e5e
+	}
+    
+
+
+
+   /* General Button Style */
+  
+
+   
+
+
+
+<!--  adding css-->
+
+   /* General Button Style */
+  
+  
+
+   
+.button {
+	display:block;
+	position: relative;
+	background: #fff;
+	width:100px;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	font-size:20px;
+	text-decoration:none;
+	text-transform:uppercase;
+	color:#e04e5e;
+	margin:40px auto;
+	font-family:Helvetica, Arial, sans-serif;
+	box-sizing:border-box;
+}
+
+/* Button Border Style */
+.button.border {
+		border-top:4px solid #e04e5e;
+		border-bottom:4px solid #e04e5e;
+}
+.button.border:hover {
+	background:#e04e5e;
+	color:#fff;
+}
+
+/* Button Ribbon-Outset Border Style */
+.button.ribbon-outset.border:after, .button.ribbon-outset.border:before {
+		top: 50%;
+		content: " ";
+		height: 42px;
+		width: 42px;
+		position:absolute;
+    top:center;
+    left:center;
+		pointer-events: none;
+		background:#fff;
+	}
+	.button.ribbon-outset.border:after {
+		left:0;
+		margin-top:-40px;
+		transform-origin:0 0;
+		box-sizing:border-box;
+		border-bottom:5px solid #e04e5e;
+		border-left:5px solid #e04e5e;
+		transform:rotate(45deg) skew(19deg,19deg);
+	}
+	.button.ribbon-outset.border:before {
+		right:-42px;
+		margin-top:-40px;
+		transform-origin:0 0;
+		box-sizing:border-box;
+		border-top:5px solid #e04e5e;
+		border-right:5px solid #e04e5e;
+		transform:rotate(45deg) skew(19deg,19deg);
+	}
+	.button.ribbon-outset.border:hover:after {
+		background:#e04e5e
+	}
+	.button.ribbon-outset.border:hover:before {
+		background:#e04e5e
+	}
+    
+
+
+
+
+        .active-pink-textarea.md-form label.active {
+  color: #f48fb1;
+}
+.pink-textarea textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+.pink-textarea.md-form .prefix.active {
+  color: #f48fb1;
+}
+.active-pink-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #f48fb1;
+}
+
+.active-amber-textarea.md-form label.active {
+  color: #ffa000;
+}
+.amber-textarea textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #ffa000;
+  box-shadow: 0 1px 0 0 #ffa000;
+}
+.amber-textarea.md-form .prefix.active {
+  color: #ffa000;
+}
+.active-amber-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #ffa000;
+}
+
+.active-pink-textarea-2 textarea.md-textarea {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+.active-pink-textarea-2.md-form label.active {
+  color: #f48fb1;
+}
+.active-pink-textarea-2.md-form label {
+  color: #f48fb1;
+}
+.active-pink-textarea-2.md-form .prefix {
+  color: #f48fb1;
+}
+.active-pink-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #f48fb1;
+}
+
+.active-amber-textarea-2 textarea.md-textarea {
+  border-bottom: 1px solid #ffa000;
+  box-shadow: 0 1px 0 0 #ffa000;
+}
+.active-amber-textarea-2.md-form label.active {
+  color: #ffa000;
+}
+.active-amber-textarea-2.md-form label {
+  color: #ffa000;
+}
+.active-amber-textarea-2.md-form .prefix {
+  color: #ffa000;
+}
+.active-amber-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #ffa000;
+}
+    
+
+
+        .active-pink-textarea.md-form label.active {
+  color: #f48fb1;
+}
+.pink-textarea textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+.pink-textarea.md-form .prefix.active {
+  color: #f48fb1;
+}
+.active-pink-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #f48fb1;
+}
+
+.active-amber-textarea.md-form label.active {
+  color: #ffa000;
+}
+.amber-textarea textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #ffa000;
+  box-shadow: 0 1px 0 0 #ffa000;
+}
+.amber-textarea.md-form .prefix.active {
+  color: #ffa000;
+}
+.active-amber-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #ffa000;
+}
+
+.active-pink-textarea-2 textarea.md-textarea {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+.active-pink-textarea-2.md-form label.active {
+  color: #f48fb1;
+}
+.active-pink-textarea-2.md-form label {
+  color: #f48fb1;
+}
+.active-pink-textarea-2.md-form .prefix {
+  color: #f48fb1;
+}
+.active-pink-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #f48fb1;
+}
+
+.active-amber-textarea-2 textarea.md-textarea {
+  border-bottom: 1px solid #ffa000;
+  box-shadow: 0 1px 0 0 #ffa000;
+}
+.active-amber-textarea-2.md-form label.active {
+  color: #ffa000;
+}
+.active-amber-textarea-2.md-form label {
+  color: #ffa000;
+}
+.active-amber-textarea-2.md-form .prefix {
+  color: #ffa000;
+}
+.active-amber-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
+  color: #ffa000;
+}
+    
+
+.active-pink-textarea.md-form label.active {
+color: #f48fb1;
+}
+.pink-textarea textarea.md-textarea:focus:not([readonly]) {
+border-bottom: 1px solid #f48fb1;
+box-shadow: 0 1px 0 0 #f48fb1;
+}
+.pink-textarea.md-form .prefix.active {
+color: #f48fb1;
+}
+.active-pink-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
+color: #f48fb1;
+}
+
+.active-amber-textarea.md-form label.active {
+color: #ffa000;
+}
+.amber-textarea textarea.md-textarea:focus:not([readonly]) {
+border-bottom: 1px solid #ffa000;
+box-shadow: 0 1px 0 0 #ffa000;
+}
+.amber-textarea.md-form .prefix.active {
+color: #ffa000;
+}
+.active-amber-textarea.md-form textarea.md-textarea:focus:not([readonly])+label {
+color: #ffa000;
+}
+
+.active-pink-textarea-2 textarea.md-textarea {
+border-bottom: 1px solid #f48fb1;
+box-shadow: 0 1px 0 0 #f48fb1;
+}
+.active-pink-textarea-2.md-form label.active {
+color: #f48fb1;
+}
+.active-pink-textarea-2.md-form label {
+color: #f48fb1;
+}
+.active-pink-textarea-2.md-form .prefix {
+color: #f48fb1;
+}
+.active-pink-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
+color: #f48fb1;
+}
+
+.active-amber-textarea-2 textarea.md-textarea {
+border-bottom: 1px solid #ffa000;
+box-shadow: 0 1px 0 0 #ffa000;
+}
+.active-amber-textarea-2.md-form label.active {
+color: #ffa000;
+}
+.active-amber-textarea-2.md-form label {
+color: #ffa000;
+}
+.active-amber-textarea-2.md-form .prefix {
+color: #ffa000;
+}
+.active-amber-textarea-2.md-form textarea.md-textarea:focus:not([readonly])+label {
+color: #ffa000;
+}
+
+
+
+
+
+    .h-zigzag {
+        height: 600px;
+        width: 100%px;
+        background:
+            linear-gradient(45deg, #152E4E 5px, transparent 0) 0 5px,
+            linear-gradient(-45deg, #152E4E 5px, #fff 0) 0 5px;
+        background-color: #152E4E;
+        background-position: right top;
+        background-repeat: repeat-x;
+        background-size: 10px 10px;
+
+    }
+
+    
+             
+    
+                .h-zigzag-right {
+    height:auto;
+    width:100%;
+    background:
+        linear-gradient(135deg, purple  5px, transparent 0) 0 5px,
+        linear-gradient(45deg, purple  5px, #fff 0) 0 5px;
+    background-color: purple ;
+    background-position: top right  ;
+    background-repeat: repeat-y;
+    background-size: 10px 10px;
+ 
+}
+
+.scroll {
+
+
+
+    max-height: 600px;
+
+
+    overflow-y: scroll;
+
+}
+
+.scroll::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+
+
+.scroll::-webkit-scrollbar-track {
+
+
+
+    border-radius: 20px;
+
+}
+
+
+
+.scroll::-webkit-scrollbar-thumb {
+
+    background: rgb(152, 37, 187);
+
+    border-radius: 10px;
+
+}
+

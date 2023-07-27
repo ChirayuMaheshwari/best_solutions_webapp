@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>This is title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> This is user page</title>
+      
+    
+        <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/assets/css/hexagons.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    </head>
+    <body style="margin:30px">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="\images\we.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                
+              </a>
+            
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul  class="navbar-nav">
+                
+                <li style="padding-left:30px" class="nav-item active">
+                  <a class="navbar-brand" href="#">Home</a>
+                </li>
+                <li style="padding-left:40px" class="nav-item active">
+                  <a class="navbar-brand" href="#">Doctor</a>
+                </li>
+                <li style="padding-left:40px" class="nav-item active">
+                  <a class="navbar-brand" href="#">Products</a>
+                </li>
+                <li style="padding-left:40px" class="nav-item active">
+                  <a class="navbar-brand" href="#">Services</a>
+                </li>
+                <li style="padding-left:40px" class="nav-item active">
+                    <a class="navbar-brand" href="#">Entertainment</a>
+                  </li>
+                  <li style="padding-left:40px" class="nav-item active">
+                    <a class="navbar-brand" href="#">Bolgs</a>
+                  </li>
+                  <li style="padding-left:40px" class="nav-item active">
+                    <button style="border-radius:12px" type="button" class="btn btn-dark btn-sm navbar-brand">Login/Signup</button>
+                    
+                  </li>
+              </ul>
+            </div>
+          </nav>
+
+
+
+
+
+          <div>
+            <img  src="/images/family.jpg" width="100%" height="300px">
+        </div>
+        
+        
+        <div style="background-color:purple">
+            <h1 style="text-align: center;"><%= disease_id%></h1>
+        </div>
+      
+        
+<div style="text-align:center;width:100%;background-color:rgb(138, 138, 192);display:inline-block">
+    <h1 style="margin:auto"> Consult </h1>
+    
+    <div style="display:inline-block">
+    <% for (var i =0; i <result1.length;  i++ ) { %>
+      <div style="width:20%;float:left;margin:2.5%;" class="card">
+        <img class="card-img-top" src="/images/doctor_images/<%= result1[i].doctor_id%>" width="200px" height="200px" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= result1[i].name %></h5>
+          <p class="card-text"><%= result1[i].specialization %></p>
+          <a style="margin:auto" href="/<%=result1[i].doctor_id.substring(0,5) %>/consult" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+         
+      <% } %>
+      <a href="/" style="float:right">view all>></a>
+    </div>
+    </div>
+    </body>
+</html>
